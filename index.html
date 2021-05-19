@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+   #intro{
+  background-image:url("https://st.focusedcollection.com/14026668/i/650/focused_181861686-stock-photo-poland-warsaw-young-couple-cuddling.jpg");
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  top:0;
+  left:0;
+  color:red;
+  font-size:35px;
+  font-family:cursive;
+  font-weight:bolder;
+  text-align:center;
+}
+#container{
+    width:auto;
+    height:auto;
+    position:absolute;
+    background:linear-gradient(red,pink);
+    top:15%;
+    left:12%;
+    font-size:25px;
+    opacity:0.
+    background-clip:padding-box;
+}  
+span{
+    opacity:1;
+}
+input[type="text"] {
+    position:absolute;
+width:70%;
+height:5%;
+overflow:hidden;
+top:30%;
+left:14%;
+text-align:center;
+display:block;
+}
+#l {
+    top:40%
+}
+h1{
+    position:absolute;
+    top:60%;
+    left:15%;
+    font-family:serif;
+    color:#baefac;
+    background:pink;
+}
+#just {
+position:absolute;
+    top:75%
+}
+span {
+    position:absolute;
+    top:75%;
+    left:10%;
+    font-weight:bolder;
+    background:red;
+}
+#mo {
+    top:80%
+}
+#more {
+position:absolute;
+    top:80%
+}
+button {
+    left:30%;
+    position:absolute;
+    top:85%;
+    background:linear-gradient(orange,red);
+    font-size:25px;
+    font-family:monospace;
+}
+#toggle {
+  display:no
+}
+#bet {
+left:3%;
+position:absolute;
+font-family:monospace;
+font-size:22px;
+top:0;
+}
+#yourName{
+    position:absolute;
+    top:15%;
+    width:30%;
+}
+#plus {
+ position:absolute;
+ top:18%;
+ left:45%; 
+ font-size:35px; 
+}
+#belName {
+  position:absolute;
+    top:15%;
+    left:68%;
+    width:30%;   
+}
+#name1 {
+    position:absolute;
+    top:30%;
+    left:5%;
+}
+#name2 {
+    position:absolute;
+    top:30%;
+    left:75%;
+}
+h3 {
+    background:red;
+}
+#per {
+    width:auto;
+    height:auto;
+    background:red;
+    position:absolute;
+    top:50%;
+    font-size:30px;
+    left:40%;
+}
+#back {
+    background:transparent;
+    border:none;
+    left:40%;
+    font-size:70px;
+}
+#result{
+   display:none; 
+}
+@keyframes fadeIn {
+    from{opacity:0;}
+    to{opacity:1;}
+}
+#quotes {
+    width:100%;
+background:linear-gradient(120deg,red,orange);
+    position:absolute;
+    height:auto;
+    word-wrap:break-word;
+    font-size:25px;
+    font-family:serif;
+    top:60%;
+}
+    </style>
+        <title>Page Title</title>
+    </head>
+    <body>
+     <div id="intro">Love calculator <br /> </div> 
+    <div id="toggle">
+     <input type="text" placeholder="Enter your name">
+     <input type="text" placeholder="Enter your beloved one" id="l">
+     <br />
+ <button onclick="percent()">Calculate</button>
+ </div>
+ <div id="result">
+  <h1 id="bet">The love percentage between</h1>
+ <img id="yourName" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3oxcx2td6tiJ2Bkm4pVuJhfyISoYLI8hHB5y_REQZuvU4jYey&s"> <span id="plus">&</span>
+ <img id="belName" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3oxcx2td6tiJ2Bkm4pVuJhfyISoYLI8hHB5y_REQZuvU4jYey&s">
+ <h3 id="name1">name1</h3>
+ <h3 id="name2">name2</h3>
+ <div id="per"></div>
+ <div id="quotes"></div>
+ <button id="back" onclick="ret()">🏠</button>
+ </div>
+ <script>
+ var loveq= document.getElementById("quotes");
+ var yourName = document.getElementById("name1");
+ var loverName = document.getElementById("name2");
+ var result = document.getElementById("per");
+ var res = document.getElementById("result");
+ var toggle = document.getElementById("toggle");
+var names = document.querySelectorAll("input[type='text']");
+var rel = document.querySelectorAll("input[type='radio']");
+//alert(rel[0])
+function percent (){
+   if (names[0].value=="" || names[1].value =="") {
+   alert("Make sure that\nYou fill your name\nYou fill your beloved one.")  
+  }
+else  if (names[0].value == names[1].value ){
+      alert("Similar names not allowed!")
+  }
+  else {
+toggle.style.display="none";
+res.style.display="block";
+yourName.innerHTML = names[0].value;
+loverName.innerHTML = names[1].value;
+result.innerHTML = Math.ceil(Math.random()*100) + "%";
+var loveQuotes =["Just like the absence of salt makes food tastless without you in my life will take away all my happiness","Love is not between beautiful man and woman Its between beautiful hearts","I need you<br/>Like heart needs beat","You have no idea how much my heart beats when i see you","Love doesn't need to be perfect it needs to be true","I love my life because it gave me you I love you because you are my life","Love is not something you find Love is something that finds you","We fall in love by chance we stay in love by choice","When I close my eyes<br/>I see you.....<br/>When i open my eyes<br/>I miss you....."];
+loveq.innerHTML=loveQuotes[Math.ceil(Math.random()*loveQuotes.length-1)];
+loveq.style.animation="fadeIn 2s linear 1";
+  }
+}
+function ret(){
+    toggle.style.display ="block";
+    res.style.display ="none";
+}
+ </script>
+    </body>
+</html>
